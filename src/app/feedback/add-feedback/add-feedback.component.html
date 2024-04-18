@@ -1,5 +1,7 @@
 
-   <div>
+   
+    <div >
+
     <form [formGroup]="feedback" (ngSubmit)="insertFeedbackDetails()">
       <div >
         <h2>How was the movie?</h2>
@@ -39,13 +41,12 @@
       <div>
         <label>Express more, write a review  (optional) </label>
         <textarea formControlName="feedback"></textarea>
-        <!-- <div *ngIf="feedback.controls.feedback.invalid && (feedback.controls.feedback.dirty || feedback.controls.feedback.touched)">
-          <small class="text-danger" *ngIf="feedback.controls.feedback.errors?.['required']">Feedback is required.</small>
-          <small class="text-danger" *ngIf="feedback.controls.feedback.errors?.['minlength']">Feedback must be at least 10 characters long.</small>
-        </div> -->
+        
       </div>
   
-      <button type="submit" (click) ="goToSuccessfulPage()">Submit Feedback</button>
+
+    <button type="submit" (click)="hideForm()">Submit Feedback</button> 
+
     </form>
   </div>
-  
+ 
