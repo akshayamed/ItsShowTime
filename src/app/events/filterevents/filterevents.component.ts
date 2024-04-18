@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from '../../model/events';
+import { Events } from '../../model/events';
 import { EventsService } from '../../services/events.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class FilterEventsComponent implements OnInit {
   selectedPriceRange: string = ''; // New property for selected price range
   genres: string[] = ['Comedy', 'Workshops', 'Music', 'Kids'];
   priceRanges: string[] = ['0-300', '300-500', '500-900', '900-above']; // Price ranges
-  events: Event[] = [];
+  events: Events[] = [];
   showGenreDropdown: boolean = false;
   showPriceRangeDropdown: boolean = false; // New property to toggle price range dropdown
 
@@ -48,7 +48,7 @@ export class FilterEventsComponent implements OnInit {
 
   fetchEventsByGenre(): void {
     this.eventService.getEventsByGenre(this.selectedGenre).subscribe(
-      (data: Event[]) => {
+      (data: Events[]) => {
         this.events = data;
       },
       (error: any) => {
@@ -59,7 +59,7 @@ export class FilterEventsComponent implements OnInit {
 
   fetchEventsByPriceRange(): void {
     this.eventService.getEventsByPriceRange(this.selectedPriceRange).subscribe(
-      (data: Event[]) => {
+      (data: Events[]) => {
         this.events = data;
       },
       (error: any) => {
