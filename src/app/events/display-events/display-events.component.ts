@@ -26,6 +26,8 @@ export class DisplayEventsComponent {
     });
   }
   ngOnInit(){
+    
+    
     this.service.displayEvents().subscribe({
       next:(response)=>{
         console.log("back to front end:next");
