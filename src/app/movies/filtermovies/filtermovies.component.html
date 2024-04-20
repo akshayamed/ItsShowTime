@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="left filter-container">
+    <!-- Language Box -->
+    <div class="language-box">
+      <h3 (click)="toggleLanguageDropdown()">Languages &#x25BC;</h3>
+      <div class="dropdown" *ngIf="showLanguageDropdown">
+        <div class="dropdown-item" *ngFor="let language of languages" (click)="onLanguageSelect(language)">
+          <button [class.selected]="language === selectedLanguage">{{ language }}</button>
+        </div>
+      </div>
+      <button class="clear-button" (click)="onClearLanguages()">Clear</button>
+    </div>
+
+    <!-- Genre Box -->
+    <div class="genre-box">
+      <h3 (click)="toggleGenreDropdown()">Genres &#x25BC;</h3>
+      <div class="dropdown" *ngIf="showGenreDropdown">
+        <div class="dropdown-item" *ngFor="let genre of genres" (click)="onGenreSelect(genre)">
+          <button [class.selected]="genre === selectedGenre">{{ genre }}</button>
+        </div>
+      </div>
+      <button class="clear-button" (click)="onClearGenres()">Clear</button>
+    </div>
+  </div>
+
+  <div class="right movie-container" *ngIf="movies.length > 0">
+    <div class="movie-item" *ngFor="let movie of movies">
+      <div class="card">
+        <img [src]="movie.posterUrl" alt="{{ movie.movieName }} Poster" class="card-img-top" width="200px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.movieName }}</h5>
+          <p class="card-text">{{ movie.genre }}, {{ movie.releaseDate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

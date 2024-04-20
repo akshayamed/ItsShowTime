@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.genre-box, .price-range-box {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 2px;
+  margin: 5px 0 5px 5px;
+  width: 200px;
+}
+
+.genre-container h3,
+.price-range-container h3 {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.clear-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: calc(100% + 5px);
+}
+
+.dropdown {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: max-content;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 5px 10px;
+}
+
+.event-container-wrapper {
+  float: right;
+  width: 75%;
+}
+
+.event-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+}
+
+.event-item {
+  margin: 10px;
+}
+
+/* Default style for buttons */
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  color: red; /* Default text color */
+}
+
+/* Style for selected buttons */
+button.selected {
+  background-color: red; /* Selected button color */
+  color: white; /* Text color for selected button */
+}
+
+.clear-button {
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.genre-container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  color: red; /* Default text color */
+}
+
+.price-range-container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  color: red; /* Default text color */
+}
+
+.genre-container button.selected {
+  background-color: red; /* Selected button color */
+  color: white; /* Text color for selected button */
+}
+
+.price-range-container button.selected {
+  background-color: red; /* Selected button color */
+  color: white; /* Text color for selected button */
+}
+
+.left {
+  float: left;
+  width: 25%;
+}
+
+.right {
+  float: right;
+  width: 75%;
+}

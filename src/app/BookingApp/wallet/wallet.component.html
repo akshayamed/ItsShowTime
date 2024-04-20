@@ -1,0 +1,24 @@
+<div>
+    <div class="card mt-4">
+      <div class="card-body">
+        <h5 class="card-title">Available:</h5>
+        <div class="mb-3">
+          <h4>{{ customerDetails?.customerWallet | currency:"INR" }}</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card mt-4">
+      <div class="card-body">
+        <h5 class="card-title">Extra Money To Add:</h5>
+        <form>
+          <div class="mb-3">
+            <input type="number" class="form-control" id="extraMoney" name="extraMoney" [(ngModel)]="Money" placeholder="Enter extra money" required>
+            <div *ngIf="Money <= 0" style="color: red;">Required.</div>
+          </div>
+          <button type="button" [disabled]="Money <= 0" class="btn btn-primary" (click)="addMoneyToWallet(Money)">Add Money</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

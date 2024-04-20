@@ -1,0 +1,46 @@
+/* General card styling */
+.card {
+    margin-bottom: 20px; /* Add spacing between cards */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  }
+  
+  /* Card title styling */
+  .card-title {
+    font-weight: bold; /* Make titles bolder */
+    margin-bottom: 10px; /* Add space between title and content */
+  }
+  
+  /* Available amount styling */
+  .mb-3 h4 {
+    font-size: 20px; /* Adjust font size for available amount */
+  }
+  
+  /* Extra money input styling */
+  .mb-3 input[type="number"] {
+    padding: 10px; /* Adjust padding for input field */
+    border: 1px solid #ccc; /* Add border to input field */
+  }
+  
+  /* Validation error message styling */
+  .mb-3 div[style] {
+    font-size: 12px; /* Adjust font size for error message */
+    margin-top: 5px; /* Add space above error message */
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    background-color: #007bff; /* Blue color for primary button */
+    color: #fff; /* White text for primary button */
+    border: none; /* Remove border for primary button */
+    border-radius: 4px; /* Add rounded corners for button */
+    padding: 8px 20px; /* Adjust padding for button */
+    cursor: pointer; /* Indicate clickable button */
+  }
+  
+  /* Disable button styling (optional) */
+  .btn-primary[disabled] {
+    background-color: #ccc; /* Gray color for disabled button */
+    cursor: default; /* Remove pointer indication for disabled button */
+  }
+  

@@ -8,7 +8,7 @@ import { Events } from '../model/events';
 })
 export class EventsService {
 
-
+  [x: string]: any;
 
   url:string="http://localhost:8000/events"
   constructor(private http:HttpClient) { }
@@ -47,9 +47,45 @@ export class EventsService {
   {
     return this.http.put<Events>(`${this.url}/updateEvent`,event)
   }
+  getEventsByGenre(genre: string): Observable<Events[]> {
+    return this.http.get<Events[]>(`${this.url}findByGenre?genre=${genre}`);
+  }
+
+  getEventsByCity(city: string): Observable<Events[]> {
+    return this.http.get<Events[]>(`${this.url}findByCity/${city}`);
+  }
+  getEventsByPriceRange(price: string): Observable<Events[]> {
+    return this.http.get<Events[]>(`${this.url}price-range/${price}`);
+  }
 
   // deleteMovieByName(movieName: string): Observable<any> {
   //   return this.http.delete(`${this.url}/deleteMovieByName/${movieName}`, { responseType: 'text' as 'json' });
   // }
 
 }
+// import { HttpClient } from '@angular/common/http';
+// import { Injectable } from '@angular/core';
+// import { Observable } from 'rxjs';
+// import { Event } from '../model/events';
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class EventService {
+//   [x: string]: any;
+//   private baseUrl = 'http://localhost:8000/events/';
+
+//   constructor(private http: HttpClient) { }
+
+//   getEventsByGenre(genre: string): Observable<Event[]> {
+//     return this.http.get<Events[]>(`${this.baseUrl}findByGenre?genre=${genre}`);
+//   }
+
+//   getEventsByCity(city: string): Observable<Event[]> {
+//     return this.http.get<Events[]>(`${this.baseUrl}findByCity/${city}`);
+//   }
+//   getEventsByPriceRange(price: string): Observable<Event[]> {
+//     return this.http.get<Events[]>(`${this.baseUrl}price-range/${price}`);
+//   }
+  
+// }

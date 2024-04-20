@@ -8,6 +8,8 @@ import { Movies } from '../model/movies';
 })
 export class MoviesService {
 
+  [x: string]: any;
+
   url:string="http://localhost:8000/movies"
   constructor(private http:HttpClient) { }
 
@@ -44,4 +46,45 @@ export class MoviesService {
   {
     return this.http.put<Movies>(`${this.url}/updateMovie`,movie)
   }
+  getMoviesByCity(city: string): Observable<Movies[]> {
+    return this.http.get<Movies[]>(`${this.url}findByCity/${city}`);
+  }
+
+  getMoviesByLanguage(language: string): Observable<Movies[]> {
+    return this.http.get<Movies[]>(`${this.url}findByLanguage?language=${language}`);
+  }
+
+  getMoviesByGenre(genre: string): Observable<Movies[]> {
+    return this.http.get<Movies[]>(`${this.url}findByGenre?genre=${genre}`);
+  }
 }
+// import { HttpClient } from '@angular/common/http';
+// import { Injectable } from '@angular/core';
+// import { Observable } from 'rxjs';
+// import { Movie } from '../model/movies';
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class MovieService {
+//   [x: string]: any;
+//   private baseUrl = 'http://localhost:8000/movies/';
+
+//   constructor(private http: HttpClient) { }
+
+//   getMoviesByCity(city: string): Observable<Movies[]> {
+//     return this.http.get<Movies[]>(`${this.baseUrl}findByCity/${city}`);
+//   }
+
+//   getMoviesByLanguage(language: string): Observable<Movies[]> {
+//     return this.http.get<Movies[]>(`${this.baseUrl}findByLanguage?language=${language}`);
+//   }
+
+//   getMoviesByGenre(genre: string): Observable<Movies[]> {
+//     return this.http.get<Movies[]>(`${this.baseUrl}findByGenre?genre=${genre}`);
+//   }
+
+  
+// }
+
+

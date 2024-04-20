@@ -1,0 +1,53 @@
+
+<!-- booking.component.html -->
+<div class="container">
+    <div class="booking-form">
+      <h2>Booking</h2>
+      <form (ngSubmit)="submitBookingForm()">
+      <!-- Dynamic Seats Selection -->
+<div class="form-group">
+    <label>Select Seats:</label><br>
+    <div class="seat-options">
+        <div class="seat-row" *ngFor="let row of ['A', 'B', 'C']">
+            <ng-container *ngFor="let seat of ['1', '2', '3', '4', '5', '6', '7', '8', '9']">
+                <label [for]="row + seat" 
+                       (click)="toggleSeatSelection(row + seat)" 
+                       [class.selected]="isSelectedSeat(row + seat)">
+                    <fa-icon [icon]="faChair" [ngClass]="{'selected-icon': isSelectedSeat(row + seat)}"></fa-icon> {{row + seat}}
+                </label>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<!-- Meal Options -->
+<div class="form-group">
+    <label>Select Meal Coupon/Item:</label><br>
+    <div class="meal-options">
+      <ng-container *ngFor="let meal of meals; let i = index">
+        <label [for]="'meal-' + i" [class.selected]="isSelectedMeal(meal)">
+          <fa-icon [icon]="getMealIcon(meal)" (click)="toggleMealSelection(meal)" [ngClass]="{'selected-icon': isSelectedMeal(meal)}"></fa-icon> {{meal}}
+        </label>
+      </ng-container>
+    </div>
+</div>
+        <!-- Date & Time Selection -->
+        <div class="form-group">
+            <label for="date">Select Date:</label>
+            <input type="date" class="form-control" id="date" [(ngModel)]="bookingDate" name="date" required 
+                   [min]="minDate">
+        </div>        
+        <div class="form-group">
+          <label for="timeSlot">Select Time Slot:</label>
+          <select class="form-control" id="timeSlot" [(ngModel)]="timeSlot" name="timeSlot" required>
+            <option *ngFor="let slot of timeSlots" [value]="slot">{{slot}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="amount">₹ Amount to be Paid:</label>
+          <input type="text" id="amount" name="amount" class="form-control" readonly value="{{ totalAmount }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Book Tickets</button>
+      </form>
+    </div>
+  </div>
+  

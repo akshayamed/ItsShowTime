@@ -1,0 +1,215 @@
+/* Existing CSS */
+
+.popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.city-images-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between; /* Align images at the ends */
+  margin-top: 10px;
+  overflow-x: auto; /* Add horizontal scrollbar if images overflow */
+}
+
+.city-images-container button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.city-images-container img {
+  max-width: 50px;
+  margin-bottom: 5px;
+}
+
+
+/* Existing styles for movies container and items */
+
+.movie-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.movie-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-item img {
+  max-width: 100%;
+}
+
+.movie-info {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.city-selection {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.city-container.city-text {
+  margin-right: 5px;
+}
+
+.view-other-cities {
+  margin-top: 10px;
+  background-color: pink;
+}
+
+.additional-cities-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.additional-cities-container .city-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.additional-cities-container .city-group button {
+  margin: 5px;
+  color:black;
+  background-color: white;
+}
+
+.hide-cities-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.color-button {
+  background-color: pink;
+  padding: 2px 4px;
+  margin: 2px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.view-other-cities button {
+  background-color: pink;
+  padding: 2px 4px;
+  margin: 2px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.additional-cities-container .city-group button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.additional-cities-container .city-group button:hover {
+  background-color:red;
+  color: white;
+}
+.no-movies-message {
+  text-align: center;
+  color: red;
+}
+.movie-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.right.movie-container .card {
+  width: calc(50% - 10px); /* Set width for each card (minus margin) */
+  margin-bottom: 20px;
+  flex-basis: calc(50% - 10px); /* Adjust flex-basis for each card */
+}
+
+.right.movie-container .card-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next row */
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.right.movie-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}.city-group-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+
+.additional-cities-container .city-group-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.additional-cities-container .city-group button {
+  margin: 3px;
+  padding: 3px 8px;
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  
+}
+
+
+.additional-cities-container .city-group {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column */
+}
+
+.additional-cities-container .city-group .city-group-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 10px; /* Add some gap between buttons */
+}
+
+.additional-cities-container .city-group button {
+  width: 100%; /* Each button takes up 100% of its container's width */
+}
+.additional-cities-container .city-group .city-group-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 4px; /* Add some gap between buttons */
+}
+
+.additional-cities-container .city-group button {
+  width: 100%; /* Each button takes up 100% of its container's width */
+  height: 40px; /* Set a fixed height for each button */
+}
+.city-images-container button:hover{
+  background-color: pink;
+}
+.city-button:focus {
+  border: 2px solid red;
+}

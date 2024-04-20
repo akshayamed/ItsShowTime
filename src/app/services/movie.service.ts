@@ -29,6 +29,7 @@ export class MovieService {
 
    getMovieDetails():Observable<Movie[]>
    {
+    console.log("In service Get Method for Movies")
      return this.http.get<Movie[]>(`${this.url}/displayMovies`)
    }
 

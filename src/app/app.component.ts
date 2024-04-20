@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-
+import {faChair } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils, faGlassCheers, faIceCream } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] 
 })
 export class AppComponent {
-  title = 'ItsShowTime';
-
-constructor(){}
- 
+  title = 'BookingApp';
+  faChair = faChair ;
+  faUtensils=faUtensils;
+  //faPopcorn=faPopcorn;
+  faGlassCheers=faGlassCheers;
+  faIceCream=faIceCream;
 }

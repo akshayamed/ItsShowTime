@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <h2>Booking Confirmation</h2>
+    <form (ngSubmit)="confirmBooking()" #bookingForm="ngForm">
+        <p style="color: green;">{{ message }}</p>
+        
+        <!-- Selected Seats -->
+        <div *ngIf="selectedSeats">
+            <p><strong>Selected Seats:</strong></p>
+            <ul>
+                <li *ngFor="let seat of selectedSeats">{{ seat }}</li>
+            </ul>
+        </div>
+
+        <!-- Selected Meal Coupons -->
+        <div *ngIf="selectedCoupons.length > 0">
+            <strong>Selected Meal Coupons:</strong>
+            <ul>
+                <li *ngFor="let coupon of selectedCoupons">{{ coupon }}</li>
+            </ul>
+        </div>
+        
+        <!-- Selected Date -->
+        <strong>Selected Date:</strong>
+        <ul>
+            <li>{{ selectedDate }}</li>
+        </ul>
+        
+        <!-- Selected Time Slot -->
+        <strong>Selected Time Slot:</strong>
+        <ul>
+            <li>{{ timeSlot }}</li>
+        </ul>
+        
+        <!-- Total Amount -->
+        <strong>Total Amount: ₹ {{ totalAmount }}</strong>
+        <!-- Add hidden input fields for selected tickets and coupons -->
+        <input type="hidden" name="selectedSeats" value="{{ selectedSeats[0] }}">
+        <input type="hidden" name="selectedCoupons" *ngFor="let coupon of selectedCoupons" [value]="coupon">
+        <input type="hidden" name="totalAmount" value="{{ totalAmount }}"><br>
+        <!-- Update the button to submit the form -->
+        <button type="submit" class="btn btn-primary">Payment</button>
+    </form>
+</div>

@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { SearchComponent } from '../events/search/search.component';
 import { EventsModule } from '../events/events.module';
+import { EventModule } from '../event/event.module';
 
 
 
@@ -16,10 +17,10 @@ import { EventsModule } from '../events/events.module';
     FooterComponent,
     MainComponent
   ],
-  imports: [
+  imports:[
     CommonModule,
     HomepageRoutingModule,
-    EventsModule
+    EventModule
   ],
   exports: [
     HeaderComponent,

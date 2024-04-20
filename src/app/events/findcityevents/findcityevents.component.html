@@ -1,0 +1,56 @@
+<div class="city-container">
+  <button (click)="toggleCitySelection()" class="city-button">
+    {{ selectedCity ? selectedCity : 'Select Your City' }}
+    <i class="material-icons">location_on</i>
+  </button>
+</div>
+
+<div *ngIf="citySelected" class="popup">
+  <div class="popup-content">
+    <h4>Popular Cities</h4>
+    <div class="city-images-container">
+      <button (click)="selectCity(city.name)" *ngFor="let city of cities">
+        <img [src]="city.imageUrl" alt="{{ city.name }}">
+        <div>{{ city.name }}</div>
+      </button>
+    </div>
+
+    <!-- View Other Cities button -->
+    <div class="view-other-cities">
+      <button (click)="toggleAdditionalCities()" class="color--button">View Other Cities</button>
+    </div>
+
+    <!-- Additional cities list -->
+    <div *ngIf="showAdditionalCities" class="additional-cities">
+      <div class="additional-cities-container">
+        <div *ngFor="let group of additionalCitiesGrouped" class="city-group">
+          <button *ngFor="let city of group" (click)="selectAdditionalCity(city)" class="pink-button">{{ city }}</button>
+        </div>
+      </div>
+      <!-- Hide All Cities button -->
+      <div class="hide-cities-container">
+        <button class="color-button" (click)="toggleAdditionalCities()">Hide Cities</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 *ngIf="selectedCity">Events in {{ selectedCity }}</h2>
+
+<div class="right event-container">
+  <div class="event-item">
+    <div class="card-row">
+      <div class="card" *ngFor="let event of events; let i = index">
+        <img [src]="event.imageUrl" alt="{{ event.eventName }} Image" class="card-img-top" width="200px" height="300px">
+        <div class="card-body">
+          <h5 class="card-title">{{ event.eventName }}</h5>
+          <p class="card-text">{{ event.category }}, {{ event.date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedCity && (errorFetchingEvents || events.length === 0)" class="no-events-message">
+  No events available
+</div>
